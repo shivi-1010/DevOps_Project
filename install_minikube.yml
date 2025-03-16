@@ -1,0 +1,8 @@
+- hosts: localhost
+  tasks:
+    - name: Install Minikube on WSL2
+      shell: |
+        curl -Lo minikube.exe https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe
+        Move-Item minikube C:\Windows\System32\minikube.exe
+    - name: Start Minikube
+      command: minikube start
